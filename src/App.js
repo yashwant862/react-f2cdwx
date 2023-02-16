@@ -53,7 +53,6 @@ function App(props) {
       e.preventDefault();
       setSearchInput(e.target.value);
     };
-
     if (searchInput.length > 0) {
       notes.filter((SearchNote) => {
         return SearchNote.name.match(searchInput);

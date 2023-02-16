@@ -29,10 +29,7 @@ import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
-import { useNavigate } from 'react-route-dom';
-import SearchBar from './components/SearchBar';
-
-import data from './images/package';
+import { useNavigate } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -105,7 +102,7 @@ export default function MiniDrawer() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -117,8 +114,6 @@ export default function MiniDrawer() {
 
   const logo =
     'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Google_Keep_icon_%282020%29.svg/30px-Google_Keep_icon_%282020%29.svg.png';
-
- 
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -140,14 +135,14 @@ export default function MiniDrawer() {
           <img src={logo} alt="logo" sttyle={{ width: 30 }} />
           <Typography variant="h6" noWrap component="div">
             Google Keep
-            <input
+            {/* <input
               id="searchbar"
               type="text"
               placeholder="Search here"
               onChange={handleChangeSearch}
               value={searchInput}
-            />
-            {/* <input id="searchbar" type="text" placeholder="Search here..." /> */}
+            /> */}
+            <input id="searchbar" type="text" placeholder="Search here..." />
           </Typography>
         </Toolbar>
       </AppBar>

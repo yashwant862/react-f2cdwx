@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import SearchBar from './components/SearchBar';
 
 function CreateArea({ onAdd }) {
   const [isExpanded, setExpanded] = useState(false);
@@ -23,12 +22,16 @@ function CreateArea({ onAdd }) {
   }
 
   function submitButton(event) {
-    onAdd(note);
-    setNote({
-      title: '',
-      content: '',
-    });
-    event.preventDefault();
+    if (note.title == '') {
+      event.preventDefault();
+    } else {
+      onAdd(note);
+      setNote({
+        title: '',
+        content: '',
+      });
+      event.preventDefault();
+    }
   }
 
   return (
