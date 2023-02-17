@@ -14,7 +14,7 @@
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.8.1",
     "undefined": "0.1.0",
-    "yarn.pm/react-router-dom": "*"
+
   },
   "scripts": {
     "start": "react-scripts start",

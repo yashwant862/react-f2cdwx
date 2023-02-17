@@ -16,8 +16,6 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 
@@ -30,6 +28,14 @@ import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Notes from './Pages/Notes';
+import Reminder from './Pages/Reminder';
+import Label from './Pages/Label';
+import Archive from './Pages/Archive';
+import Trash from './Pages/Trash';
+import Setting from './Pages/Setting';
+import Help from './Pages/Help';
 
 const drawerWidth = 240;
 
@@ -159,11 +165,11 @@ export default function MiniDrawer() {
         <Divider />
 
         <List>
-          <ListItem
-            disablePadding
+          <Link
+            to="Notes"
             sx={{ display: 'block' }}
             onClick={() => {
-              navigate('/Notes');
+              navigate('/sNotes');
             }}
           >
             <ListItemButton
@@ -184,10 +190,10 @@ export default function MiniDrawer() {
               </ListItemIcon>
               <ListItemText primary="Notes" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
-          </ListItem>
+          </Link>
 
-          <ListItem
-            disablePadding
+          <Link
+            to="Reminder"
             sx={{ display: 'block' }}
             onClick={() => {
               navigate('/Reminder');
@@ -211,10 +217,10 @@ export default function MiniDrawer() {
               </ListItemIcon>
               <ListItemText primary="Reminder" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
-          </ListItem>
+          </Link>
 
-          <ListItem
-            disablePadding
+          <Link
+            to="Label"
             sx={{ display: 'block' }}
             onClick={() => {
               navigate('/Label');
@@ -238,10 +244,10 @@ export default function MiniDrawer() {
               </ListItemIcon>
               <ListItemText primary="Label" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
-          </ListItem>
+          </Link>
 
-          <ListItem
-            disablePadding
+          <Link
+            to="Archive"
             sx={{ display: 'block' }}
             onClick={() => {
               navigate('/Archive');
@@ -265,10 +271,10 @@ export default function MiniDrawer() {
               </ListItemIcon>
               <ListItemText primary="Archive" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
-          </ListItem>
+          </Link>
 
-          <ListItem
-            disablePadding
+          <Link
+            to="Trash"
             sx={{ display: 'block' }}
             onClick={() => {
               navigate('/Notes');
@@ -292,10 +298,10 @@ export default function MiniDrawer() {
               </ListItemIcon>
               <ListItemText primary="Trash" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
-          </ListItem>
+          </Link>
 
-          <ListItem
-            disablePadding
+          <Link
+            to="Setting"
             sx={{ display: 'block' }}
             onClick={() => {
               navigate('/Setting');
@@ -319,10 +325,10 @@ export default function MiniDrawer() {
               </ListItemIcon>
               <ListItemText primary="Setting" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
-          </ListItem>
+          </Link>
 
-          <ListItem
-            disablePadding
+          <Link
+            to="Help"
             sx={{ display: 'block' }}
             onClick={() => {
               navigate('/Help');
@@ -346,7 +352,7 @@ export default function MiniDrawer() {
               </ListItemIcon>
               <ListItemText primary="Help" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
-          </ListItem>
+          </Link>
         </List>
         <Divider />
       </Drawer>

@@ -14,7 +14,6 @@ import Archive from './Pages/Archive';
 import Trash from './Pages/Trash';
 import Setting from './Pages/Setting';
 import Help from './Pages/Help';
-import SearchBar from './components/SearchBar';
 
 function App(props) {
   const [notes, setNotes] = useState([]);
@@ -36,6 +35,8 @@ function App(props) {
       return;
     }
   }
+
+  // Delete Note
   function deleteNotes(id) {
     setNotes((preValue) => {
       return [...preValue.filter((note, index) => index !== id)];
@@ -46,6 +47,8 @@ function App(props) {
     setEditId(editTask.notes);
     setEditId(id);
   }
+
+  // Search Bar
   const SearchBar = () => {
     const [searchInput, setSearchInput] = useState('');
 
@@ -61,19 +64,17 @@ function App(props) {
   };
   return (
     <div className="App">
-      {/* <>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/Notes" element={<Notes />}></Route>
-            <Route path="/Reminder" element={<Reminder />}></Route>
-            <Route path="/Label" element={<Label />}></Route>
-            <Route path="/Archive" element={<Archive />}></Route>
-            <Route path="/Trash" element={<Trash />}></Route>
-            <Route path="/Setting" element={<Setting />}></Route>
-            <Route path="/Help" element={<Help />}></Route>
-          </Routes>
-        </BrowserRouter>
-      </> */}
+      <>
+        <Routes>
+          <Route path="/Notes" element={<Notes />}></Route>
+          <Route path="/Reminder" element={<Reminder />}></Route>
+          <Route path="/Label" element={<Label />}></Route>
+          <Route path="/Archive" element={<Archive />}></Route>
+          <Route path="/Trash" element={<Trash />}></Route>
+          <Route path="/Setting" element={<Setting />}></Route>
+          <Route path="/Help" element={<Help />}></Route>
+        </Routes>
+      </>
       <MyDrawer />
       <Count
         count={
